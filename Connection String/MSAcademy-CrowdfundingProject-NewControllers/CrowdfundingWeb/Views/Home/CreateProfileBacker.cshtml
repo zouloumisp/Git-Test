@@ -1,0 +1,53 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "My Profile";
+}
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="~/css/dashboard.css" />
+</head>
+
+<div class="container">
+    <main>
+        <h1>
+            Create New Profile
+        </h1>
+        <form method="post" class="card p-3 md-light text-center" id="CreateBackerProfileForm">
+            <div class="form-group">
+                <label for="username">Username*</label>
+                <input type="text" id="username" placeholder="UserName" />
+                <div class="valid-feedback"> Looks good! </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password*</label>
+                <input type="password" id="password" placeholder="Enter New Password" />
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address*</label>
+                <input type="text" id="email" placeholder="Enter email" />
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="wallet">Wallet</label>
+                <input type="number" step="5" id="wallet" />
+                <small id="walletHelp" class="form-text text-muted">Add credit to your wallet to start backing projects.</small>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">I agree with the terms and conditions</label>
+            </div>
+            <button id="create-profile-backer" type="button" class="btn btn-dark" onclick="this.disabled=true;">Create Profile</button>
+        </form>
+
+        <div id="create-profile-success1" class="alert alert-success" role="alert" style="display: none">
+            Successfully Created User !
+        </div>
+
+    </main>
+
+</div>

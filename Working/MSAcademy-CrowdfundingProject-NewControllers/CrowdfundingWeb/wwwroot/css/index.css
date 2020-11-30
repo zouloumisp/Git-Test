@@ -1,0 +1,292 @@
+﻿/*-----------------------------------TILES--------------------------------*/
+
+/* Extra css */
+
+.content {
+    align-content: center;
+    vertical-align: middle;
+}
+
+*, *:before, *:after {
+    @include box-sizing(border-box);
+}
+
+[class*="entypo-"]:before {
+    font-family: 'entypo', sans-serif;
+    font-style: normal;
+    display: block;
+}
+
+i {
+    font-size: 4em;
+    line-height: 1;
+}
+
+/*-----GRID-----*/
+.header {
+    background-color: #F8EEDF;
+}
+
+.footer {
+    background-color: #F8EEDF;
+}
+
+.container {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    opacity: 0.9;
+    display: grid;
+    min-height: 100vh;
+    min-width: 100%;
+    grid-template-columns: 8fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-areas: "h1" "board1" "buttons";
+    grid-gap: 0.2rem;
+}
+
+.board {
+    grid-area: board1;
+    width: 100%;
+    min-height: 100%;
+    justify-content: center;
+}
+
+#buttons {
+    grid-area: buttons;
+    justify-content: center;
+}
+
+a {
+    color: #e7dfc6;
+}
+
+h1 {
+    grid-area: h1;
+    position: center;
+    text-align: center;
+}
+
+h4 {
+    padding-top: 20px;
+}
+/*-----GRID END-----*/
+
+h5 {
+    font-weight: 700;
+    font-size: 1.5em;
+    line-height: 1;
+    margin: 2.5em;
+    position: relative;
+    z-index: 99;
+    color: black;
+}
+
+.index-body {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    opacity: 0.9;
+}
+
+section {
+    width: 33.33%;
+    display: block;
+    float: left;
+    position: relative;
+    height: 12em;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.tile {
+    padding: 2em .8em;
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    border: 1px solid grey;
+    border-radius: 10px 10px;
+    @include transition(top .55s ease-in);
+    cursor: pointer;
+}
+
+.desc {
+    top: 100%;
+    padding-top: 4em;
+    display: block;
+    margin: 0 0 .75em;
+}
+
+
+/*** Animations ***/
+@keyframes spinOut {
+    0% {
+        transform: rotate(0deg);
+        opacity: 1.0;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes spinIn {
+    0% {
+        transform: rotate(0deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: rotate(-360deg);
+        opacity: 1.0;
+    }
+}
+
+@keyframes scootOut {
+    0% {
+        transform: translateY(0);
+    }
+
+    5% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(110px);
+    }
+}
+
+@keyframes scootIn {
+    0% {
+        transform: translateY(110px);
+    }
+
+    66% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+@-webkit-keyframes spinOut {
+    0% {
+        -webkit-transform: rotate(0deg);
+        opacity: 1.0;
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes spinIn {
+    0% {
+        -webkit-transform: rotate(0deg);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: rotate(-360deg);
+        opacity: 1.0;
+    }
+}
+
+@-webkit-keyframes scootOut {
+    0% {
+        -webkit-transform: translateY(0);
+    }
+
+    5% {
+        -webkit-transform: translateY(-15px);
+    }
+
+    100% {
+        -webkit-transform: translateY(110px);
+    }
+}
+
+@-webkit-keyframes scootIn {
+    0% {
+        -webkit-transform: translateY(110px);
+    }
+
+    66% {
+        -webkit-transform: translateY(-5px);
+    }
+
+    100% {
+        -webkit-transform: translateY(0px);
+    }
+}
+
+@-moz-keyframes spinOut {
+    0% {
+        -moz-transform: rotate(0deg);
+        opacity: 1.0;
+    }
+
+    100% {
+        -moz-transform: rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes spinIn {
+    0% {
+        -moz-transform: rotate(0deg);
+        opacity: 0;
+    }
+
+    100% {
+        -moz-transform: rotate(-360deg);
+        opacity: 1.0;
+    }
+}
+
+@-moz-keyframes scootOut {
+    0% {
+        -moz-transform: translateY(0);
+    }
+
+    5% {
+        -moz-transform: translateY(-15px);
+    }
+
+    100% {
+        -moz-transform: translateY(110px);
+    }
+}
+
+@-moz-keyframes scootIn {
+    0% {
+        -moz-transform: translateY(110px);
+    }
+
+    66% {
+        -moz-transform: translateY(-5px);
+    }
+
+    100% {
+        -moz-transform: translateY(0px);
+    }
+}
+
+
+.spin-in {
+    @include animate(spinIn, .4s, .2s, ease);
+}
+
+.spin-out {
+    @include animate(spinOut, .4s, 0s, ease);
+}
+
+.scoot-out {
+    @include animate(scootOut, .5s, 0s, ease);
+}
+
+.scoot-in {
+    @include animate(scootIn, 1s, 0s, ease);
+}
